@@ -96,7 +96,6 @@
   cursor: pointer;
   overflow: hidden;
   background-color: var(--bg-card);
-  background-image: var(--bg-img);
   background-size: cover;
   background-position: center;
   display: flex;
