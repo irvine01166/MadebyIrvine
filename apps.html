@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Development</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/apps.css">
+    <script src="assets/js/theme.js"></script>
+</head>
+<body>
+    <!-- Global Navbar -->
+    <div class="navbar-wrapper" id="main-nav" style="position: sticky; padding-top: 20px; padding-bottom: 20px; z-index: 1000;">
+        <nav class="navbar" style="background: var(--primary-color);">
+            <a href="index.html" class="nav-brand">MADE BY IRVINE</a>
+            <div class="nav-links">
+                <div class="nav-item dropdown">
+                    <span class="nav-label">Categories</span>
+                    <div class="dropdown-content">
+                        <a href="index.html#categories">Home</a>
+                        <a href="lens.html">Lens of Irvine</a>
+                        <a href="apps.html">App Development</a>
+                        <a href="digital-arts.html">Digital Arts</a>
+                    </div>
+                </div>
+                <div class="nav-item"><span class="nav-label">Button 2</span></div>
+                <div class="nav-item"><span class="nav-label">Button 3</span></div>
+                <a href="contact.html" class="nav-item"><span class="nav-label">Contact Me</span></a>
+            </div>
+        </nav>
+        <label class="theme-switch" for="theme-toggle" title="Toggle Theme">
+            <input type="checkbox" id="theme-toggle">
+            <div class="slider round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </div>
+        </label>
+    </div>
+
+    <main class="apps-container">
+        <!-- Sticky Left Column: Phone Mockup -->
+        <aside class="sticky-column">
+            <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                    <img id="mockup-image" src="https://picsum.photos/id/111/400/800" alt="App Screen">
+                </div>
+            </div>
+        </aside>
+
+        <!-- Scrollable Right Column: App Details -->
+        <section class="scroll-column">
+            
+            <article class="app-section" data-img="https://picsum.photos/id/111/400/800">
+                <div class="app-header">
+                    <h1 class="app-title">NAPDROP</h1>
+                    <span class="app-price">199 Php</span>
+                </div>
+                <p class="app-tagline">The alarm that wakes you up based on WHERE you are. Drop a pin. Set your radius. Go Nap till your Drop.</p>
+                
+                <div class="app-features">
+                    <p>Even with your screen off, even offline.</p>
+                    <ul>
+                        <li>— Arrive OR Leave triggers</li>
+                        <li>— Custom alarm radius</li>
+                        <li>— Snooze by distance or by time</li>
+                        <li>— Background tracking</li>
+                        <li>— Multiple alarms</li>
+                        <li>— Fully customizable theme 🎨</li>
+                    </ul>
+                </div>
+                
+                <div class="app-downloads">
+                    <div class="download-item">
+                        <a href="#" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" class="store-badge">
+                        </a>
+                        <img src="https://picsum.photos/id/1/150/150" alt="QR Code" class="qr-code">
+                    </div>
+                    <div class="download-item">
+                        <a href="#" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="store-badge">
+                        </a>
+                        <img src="https://picsum.photos/id/2/150/150" alt="QR Code" class="qr-code">
+                    </div>
+                </div>
+            </article>
+
+            <article class="app-section" data-img="https://picsum.photos/id/112/400/800">
+                <div class="app-header">
+                    <h1 class="app-title">FOCUSMATE</h1>
+                    <span class="app-price">Free</span>
+                </div>
+                <p class="app-tagline">Your personal productivity companion that keeps you off distractions.</p>
+                
+                <div class="app-features">
+                    <p>Stay in the zone, anywhere.</p>
+                    <ul>
+                        <li>— Pomodoro timer integration</li>
+                        <li>— App blocking capabilities</li>
+                        <li>— Daily analytics and insights</li>
+                        <li>— Gamified rewards</li>
+                    </ul>
+                </div>
+                
+                <div class="app-downloads">
+                    <div class="download-item">
+                        <a href="#" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" class="store-badge">
+                        </a>
+                        <img src="https://picsum.photos/id/3/150/150" alt="QR Code" class="qr-code">
+                    </div>
+                </div>
+            </article>
+
+            <article class="app-section" data-img="https://picsum.photos/id/113/400/800">
+                <div class="app-header">
+                    <h1 class="app-title">LENSKIT</h1>
+                    <span class="app-price">499 Php</span>
+                </div>
+                <p class="app-tagline">Advanced camera tools for the modern mobile photographer.</p>
+                
+                <div class="app-features">
+                    <p>Professional grade control in your pocket.</p>
+                    <ul>
+                        <li>— Full manual controls (ISO, Shutter)</li>
+                        <li>— RAW capture</li>
+                        <li>— Custom LUT support</li>
+                        <li>— Histogram and focus peaking</li>
+                    </ul>
+                </div>
+                
+                <div class="app-downloads">
+                    <div class="download-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" class="store-badge">
+                        <img src="https://picsum.photos/id/4/150/150" alt="QR Code" class="qr-code">
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <script src="assets/js/apps.js"></script>
+</body>
+</html>

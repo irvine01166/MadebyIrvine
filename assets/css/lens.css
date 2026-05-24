@@ -1,0 +1,93 @@
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px); /* Fill remaining space after navbar */
+  overflow: hidden;
+  background-color: var(--bg-light);
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 10px 0;
+  color: var(--text-dark);
+}
+
+.main-stage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-height: 0; /* Important for flex child to shrink properly */
+}
+
+.main-stage img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* User requested: Show entire photo without cropping */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  background-color: var(--bg-card); /* Slight background in case of transparency */
+  transition: opacity 0.3s ease;
+}
+
+.photo-caption {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding: 15px 0;
+  color: var(--text-dark);
+}
+
+/* Thumbnail Track */
+.thumbnail-track-container {
+  width: 100%;
+  background-color: var(--bg-card);
+  padding: 10px 0;
+  overflow-x: auto;
+  /* Hide scrollbar for cleaner look but keep scrollable */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+
+.thumbnail-track-container::-webkit-scrollbar {
+  display: none;
+}
+
+.thumbnail-track {
+  display: flex;
+  gap: 10px;
+  padding: 0 20px;
+  width: max-content;
+}
+
+.thumbnail {
+  height: 100px;
+  width: auto;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  object-fit: cover;
+  border: 3px solid transparent;
+}
+
+.thumbnail:hover {
+  opacity: 0.9;
+}
+
+.thumbnail.active {
+  opacity: 1;
+  border-color: var(--text-dark); /* Bold border as requested */
+  transform: scale(1.05);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 1.5rem;
+  }
+  .thumbnail {
+    height: 70px;
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lens of Irvine</title>
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/lens.css">
+    <script src="assets/js/theme.js"></script>
+</head>
+<body>
+    <!-- Global Navbar (Always visible on this page) -->
+    <div class="navbar-wrapper" id="main-nav" style="position: relative; top: 0; padding-top: 20px; padding-bottom: 20px;">
+        <nav class="navbar" style="background: var(--primary-color);">
+            <a href="index.html" class="nav-brand">MADE BY IRVINE</a>
+            <div class="nav-links">
+                <div class="nav-item dropdown">
+                    <span class="nav-label">Categories</span>
+                    <div class="dropdown-content">
+                        <a href="index.html#categories">Home</a>
+                        <a href="lens.html">Lens of Irvine</a>
+                        <a href="apps.html">App Development</a>
+                        <a href="digital-arts.html">Digital Arts</a>
+                    </div>
+                </div>
+                <div class="nav-item"><span class="nav-label">Button 2</span></div>
+                <div class="nav-item"><span class="nav-label">Button 3</span></div>
+                <a href="contact.html" class="nav-item"><span class="nav-label">Contact Me</span></a>
+            </div>
+        </nav>
+        <label class="theme-switch" for="theme-toggle" title="Toggle Theme">
+            <input type="checkbox" id="theme-toggle">
+            <div class="slider round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </div>
+        </label>
+    </div>
+
+    <main class="gallery-container">
+        <h1 class="page-title">Lens of Irvine</h1>
+        
+        <div class="main-stage">
+            <img id="main-photo" src="https://picsum.photos/id/1015/1200/800" alt="Selected Photo">
+        </div>
+        
+        <div class="photo-caption" id="main-caption">
+            03.08.2030 - Tower Heights
+        </div>
+
+        <div class="thumbnail-track-container">
+            <div class="thumbnail-track" id="thumbnail-track">
+                <!-- Using fixed seed picsum images so thumbs match the main image -->
+                <img src="https://picsum.photos/id/1015/300/200" data-large="https://picsum.photos/id/1015/1200/800" class="thumbnail active" data-caption="03.08.2030 - Tower Heights" alt="Thumb 1">
+                <img src="https://picsum.photos/id/1016/300/200" data-large="https://picsum.photos/id/1016/1200/800" class="thumbnail" data-caption="04.12.2031 - Ocean View" alt="Thumb 2">
+                <img src="https://picsum.photos/id/1018/300/200" data-large="https://picsum.photos/id/1018/1200/800" class="thumbnail" data-caption="05.05.2032 - Mountain Pass" alt="Thumb 3">
+                <img src="https://picsum.photos/id/1019/300/200" data-large="https://picsum.photos/id/1019/1200/800" class="thumbnail" data-caption="06.18.2033 - Coastline" alt="Thumb 4">
+                <img src="https://picsum.photos/id/1020/300/200" data-large="https://picsum.photos/id/1020/1200/800" class="thumbnail" data-caption="07.22.2034 - Bear Encounter" alt="Thumb 5">
+                <img src="https://picsum.photos/id/1021/300/200" data-large="https://picsum.photos/id/1021/1200/800" class="thumbnail" data-caption="08.30.2035 - Forest Path" alt="Thumb 6">
+                <img src="https://picsum.photos/id/1022/300/200" data-large="https://picsum.photos/id/1022/1200/800" class="thumbnail" data-caption="09.15.2036 - Northern Lights" alt="Thumb 7">
+                <img src="https://picsum.photos/id/1023/300/200" data-large="https://picsum.photos/id/1023/1200/800" class="thumbnail" data-caption="10.10.2037 - Bicycle" alt="Thumb 8">
+                <img src="https://picsum.photos/id/1024/300/200" data-large="https://picsum.photos/id/1024/1200/800" class="thumbnail" data-caption="11.25.2038 - Bird of Prey" alt="Thumb 9">
+                <img src="https://picsum.photos/id/1025/300/200" data-large="https://picsum.photos/id/1025/1200/800" class="thumbnail" data-caption="12.01.2039 - Winter Dog" alt="Thumb 10">
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/lens.js"></script>
+</body>
+</html>

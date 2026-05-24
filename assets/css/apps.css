@@ -1,0 +1,179 @@
+.apps-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  gap: 60px;
+  align-items: flex-start; /* Important for sticky behavior */
+}
+
+/* Sticky Left Column */
+.sticky-column {
+  flex: 0 0 350px; /* Fixed width for phone */
+  position: sticky;
+  top: 100px; /* Stay below the navbar */
+  height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pure CSS iPhone Mockup */
+.phone-mockup {
+  width: 320px;
+  height: 650px;
+  background-color: #1a1a1a;
+  border-radius: 40px;
+  border: 8px solid #d1d5db; /* Light silver bezel */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2), inset 0 0 0 2px #000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.phone-notch {
+  position: absolute;
+  top: -1px;
+  width: 120px;
+  height: 25px;
+  background-color: #d1d5db;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 10;
+}
+/* Inner black part of the notch */
+.phone-notch::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 2px; right: 2px; bottom: 2px;
+  background-color: #000;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+/* Scrollable Right Column */
+.scroll-column {
+  flex: 1;
+  padding-bottom: 50vh; /* Allow last item to be scrolled into view fully */
+}
+
+.app-section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.app-section:last-child {
+  border-bottom: none;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.app-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-dark);
+}
+
+.app-price {
+  background-color: #8cb86d; /* Green badge */
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.app-tagline {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.app-features p {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.app-features ul {
+  list-style: none;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.app-downloads {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.download-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.store-badge {
+  height: 45px;
+  cursor: pointer;
+}
+
+.qr-code {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  padding: 5px;
+  background: var(--bg-card);
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .apps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sticky-column {
+    position: static;
+    height: auto;
+    margin-bottom: 40px;
+  }
+  
+  .app-section {
+    min-height: auto;
+    padding: 60px 0;
+  }
+  
+  .scroll-column {
+    padding-bottom: 10vh;
+  }
+}
