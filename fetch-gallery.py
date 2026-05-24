@@ -50,7 +50,7 @@ def run():
         links = asset.get('links', {})
         if '/rels/rendition_type/2048' in links:
             rel_href = links['/rels/rendition_type/2048']['href']
-            full_url = f"{base_url}spaces/{space_id}/{rel_href}"
+            full_url = f"{base_url}spaces/{space_id}/{rel_href}?api_key=LightroomMobileWeb1"
             
             # Try to extract caption/date
             caption = "Untitled"
