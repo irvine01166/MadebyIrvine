@@ -233,3 +233,54 @@ input:checked + .slider:before {
   color: var(--text-light);
   z-index: 1;
 }
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  color: var(--text-light);
+}
+
+.hamburger svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin-left: auto;
+    margin-right: 15px;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg);
+    backdrop-filter: var(--nav-backdrop);
+    -webkit-backdrop-filter: var(--nav-backdrop);
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+    gap: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .navbar {
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
+  .theme-switch {
+    margin-left: 0;
+  }
+}
