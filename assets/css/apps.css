@@ -234,8 +234,8 @@
     align-items: stretch;
     padding: 0;
     gap: 0;
-    height: 100vh;
-    height: 100dvh; /* For iOS Safari */
+    height: calc(100vh - 85px); /* Subtract navbar total height (20+45+20) */
+    height: calc(100dvh - 85px); /* For iOS Safari */
     overflow: hidden;
   }
   
@@ -250,7 +250,7 @@
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
-    padding-top: 60px; /* Space for navbar */
+    padding-top: 10px; /* Minimal space above phone */
     padding-bottom: 20px;
     z-index: 10;
     margin-bottom: 0;
