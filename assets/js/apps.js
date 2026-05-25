@@ -57,6 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
         showImage(currentIndex + 1);
     });
 
+    // Initialize with the first app section immediately so UI isn't broken on load
+    if (appSections.length > 0) {
+        const imgData = appSections[0].getAttribute('data-img');
+        if (imgData) {
+            currentImages = imgData.split(',').map(s => s.trim());
+            currentIndex = 0;
+            renderDots();
+            showImage(0);
+        }
+    }
+
     const observerOptions = {
         root: null,
         rootMargin: '-40% 0px -40% 0px', // Trigger when section is in the middle 20% of the screen

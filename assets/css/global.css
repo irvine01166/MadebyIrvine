@@ -283,4 +283,26 @@ input:checked + .slider:before {
   .theme-switch {
     margin-left: 0;
   }
+  
+  .dropdown {
+    width: 100%;
+  }
+  
+  .dropdown-content {
+    position: static;
+    display: none;
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    min-width: unset;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+  
+  .dropdown.open .dropdown-content {
+    display: block !important;
+  }
 }
