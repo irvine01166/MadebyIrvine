@@ -164,24 +164,31 @@
   
   .sticky-column {
     position: sticky;
-    top: 100px;
-    height: auto;
+    top: 70px; /* Below navbar */
+    height: 35vh; /* Around 30-35% of screen height */
+    width: 100%;
     margin-bottom: 20px;
     z-index: 100;
+    background: var(--bg-light); /* Mask the text scrolling behind */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
   }
   
   .phone-mockup {
-    width: 200px;
-    height: 406px;
-    border-radius: 25px;
-    border-width: 5px;
+    width: auto;
+    height: 90%;
+    aspect-ratio: 9 / 19.5;
+    border-radius: 20px;
+    border-width: 4px;
   }
   
   .phone-notch {
-    width: 75px;
-    height: 16px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    width: 35%;
+    height: 12px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
   
   .phone-notch::after {
