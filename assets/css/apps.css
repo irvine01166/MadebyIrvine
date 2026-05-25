@@ -157,31 +157,45 @@
 
 /* Mobile adjustments */
 @media (max-width: 900px) {
+  body {
+    overflow: hidden; /* Prevent full body scroll on mobile for apps page */
+  }
+
   .apps-container {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    padding: 0;
+    gap: 0;
+    height: 100vh;
+    height: 100dvh; /* For iOS Safari */
+    overflow: hidden;
   }
   
   .sticky-column {
-    position: sticky;
-    top: 70px; /* Below navbar */
-    height: 35vh; /* Around 30-35% of screen height */
+    position: relative;
+    top: 0;
     width: 100%;
-    margin-bottom: 20px;
-    z-index: 100;
-    background: var(--bg-light); /* Mask the text scrolling behind */
+    height: 35vh; /* Fixed height for phone section */
+    max-height: 350px;
+    background: var(--bg-card); /* Distinct background to separate from content */
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
+    padding-top: 80px; /* Space for navbar */
+    padding-bottom: 20px;
+    z-index: 10;
+    margin-bottom: 0;
   }
   
   .phone-mockup {
     width: auto;
-    height: 90%;
+    height: 100%; /* Scale to fit the 35vh container perfectly */
+    max-height: 250px; /* Cap size so it's never too big */
     aspect-ratio: 9 / 19.5;
     border-radius: 20px;
     border-width: 4px;
+    margin: 0;
   }
   
   .phone-notch {
@@ -206,14 +220,18 @@
     height: 14px;
   }
   
+  .scroll-column {
+    flex: 1; /* Take the remaining 65vh of the screen */
+    width: 100%;
+    overflow-y: auto; /* Enable scrolling only in this bottom part */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding: 20px;
+    padding-bottom: 100px;
+  }
+
   .app-section {
     min-height: auto;
-    padding: 60px 0;
-    width: 100%;
-  }
-  
-  .scroll-column {
-    padding-bottom: 10vh;
+    padding: 40px 0;
     width: 100%;
   }
 }
