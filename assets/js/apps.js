@@ -96,4 +96,26 @@ document.addEventListener('DOMContentLoaded', () => {
     appSections.forEach(section => {
         observer.observe(section);
     });
+
+    // Mobile Modal Logic
+    const openMockupBtn = document.getElementById('open-mockup');
+    const closeMockupBtn = document.getElementById('close-mockup');
+    const mockupModal = document.getElementById('mockup-modal');
+
+    if (openMockupBtn && closeMockupBtn && mockupModal) {
+        openMockupBtn.addEventListener('click', () => {
+            mockupModal.classList.add('active-modal');
+        });
+
+        closeMockupBtn.addEventListener('click', () => {
+            mockupModal.classList.remove('active-modal');
+        });
+        
+        // Optional: Close when clicking outside the phone
+        mockupModal.addEventListener('click', (e) => {
+            if (e.target === mockupModal) {
+                mockupModal.classList.remove('active-modal');
+            }
+        });
+    }
 });

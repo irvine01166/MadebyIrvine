@@ -244,6 +244,12 @@
 }
 
 /* Mobile adjustments */
+
+/* Mobile FAB & Close Button (Hidden on Desktop) */
+.mobile-fab, .modal-close {
+  display: none;
+}
+
 @media (max-width: 900px) {
   body {
     overflow: hidden; /* Prevent full body scroll on mobile for apps page */
@@ -259,31 +265,77 @@
     overflow: hidden;
   }
   
+  .mobile-fab {
+    display: flex;
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    z-index: 900;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+
   .sticky-column {
-    position: relative;
-    top: 0;
+    position: fixed;
+    inset: 0;
     width: 100%;
-    height: 25vh; /* Smaller vertical height for phone section */
-    max-height: 250px;
-    background: var(--bg-card); /* Distinct background to separate from content */
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid var(--border-color);
-    padding-top: 10px; /* Minimal space above phone */
-    padding-bottom: 20px;
-    z-index: 10;
-    margin-bottom: 0;
+    z-index: 2000;
+    padding: 0;
+    border-bottom: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .sticky-column.active-modal {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modal-close {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2010;
   }
   
   .phone-mockup {
     width: auto;
-    height: 100%; /* Scale to fit container perfectly */
-    max-height: 180px; /* Cap size much smaller vertically */
+    height: 80vh; /* Make phone much larger in modal */
+    max-height: 700px;
     aspect-ratio: 9 / 19.5;
-    border-radius: 20px;
-    border-width: 4px;
+    border-radius: 30px;
+    border-width: 6px;
     margin: 0;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
   }
   
   .phone-notch {
@@ -320,7 +372,7 @@
   }
   
   .carousel-dots {
-    bottom: 5px;
+    bottom: 20px;
   }
   
   .carousel-dot {
