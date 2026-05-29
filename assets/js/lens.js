@@ -69,6 +69,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateMainPhoto(targetIndex);
             }
         });
+
+        // Touch swipe logic for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        mainStage.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        mainStage.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+        
+        function handleSwipe() {
+            const swipeThreshold = 50; // Minimum pixel distance to trigger swipe
+            if (touchEndX < touchStartX - swipeThreshold) {
+                // Swiped Left - Go to Next
+                if (currentIndex < thumbnails.length - 1) {
+                    updateMainPhoto(currentIndex + 1);
+                }
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                // Swiped Right - Go to Previous
+                if (currentIndex > 0) {
+                    updateMainPhoto(currentIndex - 1);
+                }
+            }
+        }
     }
 
     // Add scroll listener to thumbnail track to scroll horizontally
